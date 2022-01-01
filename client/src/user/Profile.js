@@ -3,6 +3,7 @@ import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
 import { Link, Redirect } from 'react-router-dom';
 import { read, update, updateUser } from './apiUser';
+import TextField from '@material-ui/core/TextField';
 
 const Profile = ({ match }) => {
   const [values, setValues] = useState({
@@ -63,28 +64,32 @@ const Profile = ({ match }) => {
   };
 
   const profileUpdate = (name, email, password) => (
-    <form>
-      <div className='form-group'>
-        <label className='text-muted'>Name</label>
-        <input
+    <form >
+      <div style={{marginLeft:"30%"}}  className='form-group'>
+        <label className='text-muted'>Name</label> <br />
+        <TextField
+        style={{width:"50%"}}
           type='text'
+          
           onChange={handleChange('name')}
           className='form-control'
           value={name}
         />
       </div>
-      <div className='form-group'>
-        <label className='text-muted'>Email</label>
-        <input
+      <div style={{marginLeft:"30%"}} className='form-group'>
+        <label className='text-muted'>Email</label> <br />
+        <TextField
+        style={{width:"50%"}}
           type='email'
           onChange={handleChange('email')}
           className='form-control'
           value={email}
         />
       </div>
-      <div className='form-group'>
-        <label className='text-muted'>Password</label>
-        <input
+      <div style={{marginLeft:"30%"}} className='form-group'>
+        <label className='text-muted'>Password</label> <br />
+        <TextField
+        style={{width:"50%"}}
           type='password'
           onChange={handleChange('password')}
           className='form-control'
@@ -92,7 +97,7 @@ const Profile = ({ match }) => {
         />
       </div>
 
-      <button onClick={clickSubmit} className='btn btn-primary'>
+      <button style={{marginLeft:"30%"}} onClick={clickSubmit} className='btn btn-primary'>
         Submit
       </button>
     </form>
@@ -104,7 +109,7 @@ const Profile = ({ match }) => {
       description='Update your profile'
       className='container-fluid'
     >
-      <h2 className='mb-4'>Profile update</h2>
+      <h2 style={{marginLeft:"30%"}} className='mb-4'>Profile update</h2>
       {profileUpdate(name, email, password)}
       {redirectUser(success)}
     </Layout>
