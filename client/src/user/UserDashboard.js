@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
 import { isAuthenticated } from '../auth';
-import { Link } from 'react-router-dom';
+import { Link as NavLink } from 'react-router-dom';
 import { getPurchaseHistory } from './apiUser';
 import moment from 'moment';
+import AdminPanel from '../AdminPanel/AdminPanel/AdminPanel';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import RateReviewIcon from '@material-ui/icons/RateReview';
+import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+import Analytics from './Analytics';
 
 const Dashboard = () => {
+  
   const [history, setHistory] = useState([]);
 
   const {
@@ -31,19 +39,44 @@ const Dashboard = () => {
   const userLinks = () => {
     return (
       <div className='card'>
+        <div className='wrapper'>
         <h4 className='card-header'>User links</h4>
         <ul className='list-group'>
-          <li className='list-group-item'>
-            <Link className='nav-link' to='/cart'>
-              My cart
-            </Link>
+          <li style={{fontWeight:"bold",fontSize:20}} className='list-group-item'>
+            <NavLink className='nav-link' to='/cart'>
+            <IconButton aria-label='Cart'className='icons' color='inherit'>
+              <ShoppingCartIcon />
+            </IconButton>
+             My Cart
+            </NavLink>
           </li>
-          <li className='list-group-item'>
-            <Link className='nav-link' to={`/profile/${_id}`}>
+          <li style={{fontWeight:"bold",fontSize:20}} className='list-group-item'>
+            <NavLink className='nav-link' to={`/profile/${_id}`}>
+            <IconButton aria-label='Cart' color='inherit'>
+              <AccountCircleRoundedIcon />
+            </IconButton>
               Update profile
-            </Link>
+            </NavLink>
+          </li>
+          
+          <li style={{fontWeight:"bold",fontSize:20}} className='list-group-item'>
+            <NavLink className='nav-link' to={'/useranalytics'}>
+            <IconButton aria-label='TimeLine' color='inherit'>
+              <TimelineIcon />
+            </IconButton>
+              Analytics
+            </NavLink>
+          </li>
+          <li style={{fontWeight:"bold",fontSize:20}} className='list-group-item'>
+            <NavLink className='nav-link' to={`/profile/${_id}`}>
+            <IconButton aria-label='TimeLine' color='inherit'>
+              <RateReviewIcon />
+            </IconButton>
+              My Review
+            </NavLink>
           </li>
         </ul>
+        </div>
       </div>
     );
   };
@@ -58,6 +91,7 @@ const Dashboard = () => {
           <li className='list-group-item'>
             {role === 1 ? 'Admin' : 'Registered user'}
           </li>
+          <Analytics></Analytics>
         </ul>
       </div>
     );
@@ -104,6 +138,7 @@ const Dashboard = () => {
           {purchaseHistory(history)}
         </div>
       </div>
+      
     </Layout>
   );
 };

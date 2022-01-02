@@ -27,7 +27,64 @@
   color: #fff;
   font-weight: bold;
 }
+.nav-link{
+  color: rgba(248, 143, 131, 0.856)
+}
 
+.card-header{
+  text-align: center;
+  font-weight: 700;
+  color: #ee7752;
+}
+.list-group-item{
+  text-align: center;
+  font-weight: 500;
+  color: coral;
+}
+
+.card{
+  flex: 1;
+  height: calc(100vh - 50px);
+  background-color: rgb(251, 251, 255);
+  position: sticky;
+  top: 50px;
+}
+.wrapper{
+  padding: 20px;
+  color: #555;
+}
+.card-header{
+  margin-bottom: 10px;
+}
+.list-group{
+  list-style: none;
+  padding: 5px;
+}
+.list-group-item{
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+.list-group-item.active,
+.list-group-item:hover{
+  background-color: rgb(240, 240, 255);
+}
+.icons{
+  margin-right: 5px;
+  font-size: 20px !important;
+}
+.chart {
+  margin: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.chartTitle {
+  margin-bottom: 20px;
+}
 /* black shade form 10-1 */
 .black-10 {
   background: #f2f2f2;

@@ -13,8 +13,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Search from './Search';
 import { prices } from './fixedPrices';
 import Copyright from './Copyright';
+import Sidebar from '../AdminPanel/Sidebar/Sidebar';
+import AdminPanel from '../AdminPanel/AdminPanel/AdminPanel';
 
 const Shop = () => {
+  
   const [myFilters, setMyFilters] = useState({
     filters: { category: [], price: [] },
   });
@@ -160,8 +163,11 @@ const Shop = () => {
           {loadMoreButton()}
         </div>
       </div>
+      <AdminPanel></AdminPanel>
       <Copyright />
+   
     </Layout>
+    
   );
 };
 

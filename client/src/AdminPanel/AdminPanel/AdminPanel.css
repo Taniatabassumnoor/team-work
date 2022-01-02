@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+}
+.others{
+    flex: 8;
+    background-color: blue;
+}
