@@ -11,6 +11,7 @@ import TimelineIcon from '@material-ui/icons/Timeline';
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import Analytics from './Analytics';
+import Myreview from './Myreview';
 
 const Dashboard = () => {
   
@@ -68,7 +69,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li style={{fontWeight:"bold",fontSize:20}} className='list-group-item'>
-            <NavLink className='nav-link' to={`/profile/${_id}`}>
+            <NavLink className='nav-link' to={'/myreview'}>
             <IconButton aria-label='TimeLine' color='inherit'>
               <RateReviewIcon />
             </IconButton>
@@ -92,8 +93,11 @@ const Dashboard = () => {
             {role === 1 ? 'Admin' : 'Registered user'}
           </li>
           <Analytics></Analytics>
+          
         </ul>
+        
       </div>
+      
     );
   };
 

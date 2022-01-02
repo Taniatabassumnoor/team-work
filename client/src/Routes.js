@@ -18,6 +18,7 @@ import ManageProducts from './admin/ManageProducts';
 import UpdateProduct from './admin/UpdateProduct';
 import NotFound from './core/NotFound';
 import Analytics from './user/Analytics';
+import Myreview from './user/Myreview';
 
 const Routes = () => {
   return (
@@ -34,6 +35,7 @@ const Routes = () => {
         <Route path='/product/:productId' component={Product} exact />
         <Route path='/cart' component={Cart} exact />
         <Route path='/useranalytics' component={Analytics} exact />
+        <Route path='/myreview' component={Myreview} exact />
         <AdminRoute path='/admin/orders' component={Orders} exact />
         <PrivateRoute path='/profile/:userId' component={Profile} exact />
         <AdminRoute path='/admin/products' component={ManageProducts} exact />
